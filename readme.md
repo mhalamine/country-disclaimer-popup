@@ -1,4 +1,4 @@
-# Country Popup Plugin
+# Country Popup WordPress Plugin
 
 The Country Popup Plugin is a WordPress plugin that displays a popup on the homepage allowing users to select their country. Based on the selected country, users are either granted access or redirected to a custom URL.
 
