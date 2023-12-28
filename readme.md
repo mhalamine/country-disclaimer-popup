@@ -37,7 +37,7 @@ The Country Popup Plugin is a WordPress plugin that displays a popup on the home
 
 ## Support
 
-For any issues or questions related to the plugin, please [create an issue](https://github.com/your-plugin-repo/issues) on our GitHub repository.
+For any issues or questions related to the plugin, please [create an issue](https://github.com/mhalamine/country-disclaimer-popup/issues) on our GitHub repository.
 
 ## Contribution
 
