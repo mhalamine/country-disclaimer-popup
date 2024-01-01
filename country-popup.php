@@ -4,6 +4,7 @@ Plugin Name: Country Popup Plugin
 Description: Displays a popup on the homepage for selecting a country. Based on the selection the user is either granted access or redirected to a custom url
 Version: 1.0
 Author: Mohamed Al Amine
+Author URI: https://alamine.me/
 Text Domain: country-popup
 */
 

@@ -46,3 +46,7 @@ Contributions are welcome! If you have any suggestions, improvements, or bug fix
 ## License
 
 This plugin is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html) license.
+
+## Website
+
+https://alamine.me/plugins/country-popup-plugin
