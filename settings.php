@@ -11,7 +11,7 @@ add_action('admin_menu', 'country_popup_menu');
 function country_popup_settings_page() {
     ?>
     <div class="wrap">
-        <h1><?php echo esc_html__('Country Popup Settings', 'country-popup'); ?></h1>
+        <h1><?php echo esc_html__('Disclaimer Popup Settings', 'country-popup'); ?></h1>
         <form method="post" action="options.php">
             <?php
             settings_fields('country_popup_settings');
@@ -39,6 +39,7 @@ function country_popup_register_settings() {
 
     $lang = get_curr_lang();
 
+    register_setting('country_popup_settings', 'country_popup_enable_'.$lang);
     register_setting('country_popup_settings', 'country_popup_title_'.$lang);
     register_setting('country_popup_settings', 'country_popup_text_'.$lang);
     register_setting('country_popup_settings', 'country_list_'.$lang);
@@ -48,10 +49,11 @@ function country_popup_register_settings() {
 
     add_settings_section('country_popup_section', esc_html__('Popup Settings', 'country-popup'), 'country_popup_section_callback', 'country-popup-settings');
 
+    add_settings_field('country_popup_enable_'.$lang, esc_html__('Popup Enable', 'country-popup'), 'country_popup_enable_callback', 'country-popup-settings', 'country_popup_section');
     add_settings_field('country_popup_title_'.$lang, esc_html__('Popup Title', 'country-popup'), 'country_popup_title_callback', 'country-popup-settings', 'country_popup_section');
     add_settings_field('country_popup_text_'.$lang, esc_html__('Popup Text', 'country-popup'), 'country_popup_text_callback', 'country-popup-settings', 'country_popup_section');
-    add_settings_field('country_list_'.$lang, esc_html__('List of all Countries (Comma Separated)', 'country-popup'), 'country_list_callback', 'country-popup-settings', 'country_popup_section');
-    add_settings_field('not_ok_country_list_'.$lang, esc_html__('List of NOT Allowed Countries (Comma Separated)', 'country-popup'), 'not_ok_country_list_callback', 'country-popup-settings', 'country_popup_section');
+    add_settings_field('country_list_'.$lang, esc_html__('List of all Options (Comma Separated)', 'country-popup'), 'country_list_callback', 'country-popup-settings', 'country_popup_section');
+    add_settings_field('not_ok_country_list_'.$lang, esc_html__('List of NOT Allowed Options (Comma Separated)', 'country-popup'), 'not_ok_country_list_callback', 'country-popup-settings', 'country_popup_section');
     add_settings_field('redirect_url_'.$lang, esc_html__('Redirect URL', 'country-popup'), 'redirect_url_callback', 'country-popup-settings', 'country_popup_section');
     add_settings_field('country_popup_disclaimer_text_'.$lang, esc_html__('Popup Disclaimer Text', 'country-popup'), 'country_popup_disclaimer_text_callback', 'country-popup-settings', 'country_popup_section');
 
@@ -60,12 +62,21 @@ add_action('admin_init', 'country_popup_register_settings');
 
 // Settings fields callbacks
 function country_popup_section_callback() {
-    echo esc_html__('Modify settings for the country popup.', 'country-popup');
+    global $lang;
+    echo esc_html__('Modify settings for the '.$lang.' popup.', 'country-popup');
+}
+
+function country_popup_enable_callback() {
+    global $lang;
+    $value = get_option('country_popup_enable_'.$lang);
+    echo '<label for="country_popup_enable">';
+    echo '<input type="checkbox" id="country_popup_enable" name="country_popup_enable_'.$lang.'" value="1" '.checked(1, $value, false).'>';
+    echo esc_html_e('Enable Feature', 'country-popup');
+    echo '</label>';
 }
 
 function country_popup_title_callback() {
     global $lang;
-
     $value = get_option('country_popup_title_'.$lang);
     echo '<input type="text" name="country_popup_title_'.$lang.'" style="width:400px" value="' . esc_attr($value) . '">';
 }

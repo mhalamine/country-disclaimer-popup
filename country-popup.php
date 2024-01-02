@@ -1,12 +1,30 @@
 <?php
-/*
-Plugin Name: Country Popup Plugin
-Description: Displays a popup on the homepage for selecting a country. Based on the selection the user is either granted access or redirected to a custom url
-Version: 1.0
-Author: Mohamed Al Amine
-Author URI: https://alamine.me/
-Text Domain: country-popup
-*/
+/**
+ * @link              https://alamine.me/
+ * @since             1.0.1
+ * @package           Country_Popup
+ * @wordpress-plugin
+ * Plugin Name: Country Popup Plugin
+ * Plugin URI:        https://alamine.me/plugins/country-popup-plugin/
+ * Description: Displays a popup on the homepage for selecting a country. Based on the selection the user is either granted access or redirected to a custom url
+ * Version: 1.0.1
+ * Author: Mohamed Al Amine
+ * Author URI: https://alamine.me/
+ * Text Domain: country-popup
+ */
+
+
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Rename this for your plugin and update it as you release new versions.
+ */
+define( 'COUNTRY-POPUP', '1.0.1' );
 
 // Setting page
 include("settings.php");
@@ -32,8 +50,9 @@ function country_popup_enqueue_scripts() {
 // Create the function to display the popup on the homepage.
 function country_popup_display() {
     $lang = get_curr_lang();
+    $popup_enabled = get_option('country_popup_enable_'.$lang);
 
-    if (is_front_page()) {
+    if (is_front_page() && $popup_enabled) {
         // Get plugin settings
         $popup_title = get_option('country_popup_title_'.$lang);
         $popup_text = get_option('country_popup_text_'.$lang);
