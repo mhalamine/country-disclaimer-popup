@@ -13,7 +13,7 @@ The Multilang Disclaimer Popup Plugin is a WordPress plugin that displays a popu
 
 ## Installation
 
-1. Upload the `country-popup-plugin` directory to the `/wp-content/plugins/` directory or install it directly from the WordPress plugin repository.
+1. Upload the `disclaimer-multilang-popup-plugin` directory to the `/wp-content/plugins/` directory or install it directly from the WordPress plugin repository.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 ## Configuration
@@ -50,4 +50,4 @@ This plugin is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/
 
 ## Website
 
-https://alamine.me/plugins/country-popup-plugin
+https://alamine.me/plugins/disclaimer-multilang-popup/
