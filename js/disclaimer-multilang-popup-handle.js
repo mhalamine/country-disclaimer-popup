@@ -4,21 +4,22 @@ jQuery(document).ready(function($) {
     var disclaimerPopup = document.getElementById('disclaimer-popup');
     var agreeButton = document.getElementById('agree-button');
     var disagreeButton = document.getElementById('disagree-button');
-    var countryForm = document.getElementById('country-popup-form');
-    var redirectURL = countryPopupParams.redirectURL;
-    var notOkCountries = countryPopupParams.notOkCountries;
+    var disclaimerMultilangPopupForm = document.getElementById('disclaimer-multilang-popup-form');
+    var redirectURL = disclaimerMultilangPopupParams.redirectURL;
+    var notAllowedCountries = disclaimerMultilangPopupParams.notAllowedCountries;
     var selectedCountry;
 
 
     // Handle form submission
-    if (countryForm) {
-        countryForm.addEventListener('submit', function(e) {
+    if (disclaimerMultilangPopupForm) {
+        disclaimerMultilangPopupForm.addEventListener('submit', function(e) {
             e.preventDefault();
             selectedCountry = document.getElementById('country-dropdown').value;
+            console.log(notAllowedCountries);
             if(selectedCountry == "-") {
                 document.getElementById('country-dropdown').style.border = '1px solid red';
             }
-            else if (notOkCountries.includes(selectedCountry)) {
+            else if (notAllowedCountries.includes(selectedCountry)) {
                 // Handle action for not allowed countries 
                 console.log('Selected Country:', selectedCountry);
                 window.location.href = redirectURL;

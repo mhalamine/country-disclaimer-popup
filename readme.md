@@ -1,14 +1,15 @@
-# Country Popup WordPress Plugin
+# Multilang Disclaimer Popup WordPress Plugin
 
-The Country Popup Plugin is a WordPress plugin that displays a popup on the homepage allowing users to select their country. Based on the selected country, users are either granted access or redirected to a custom URL.
+The Multilang Disclaimer Popup Plugin is a WordPress plugin that displays a popup on the homepage prompting users to select an option from the available list. Based on the selected option, users are either granted access or redirected to a custom URL.
 
 ## Features
 
 - Displays a customizable popup on the homepage.
-- Allows users to select their country from a dropdown list.
-- Supports redirection based on selected countries.
-- Provides customizable popup title, text, list of countries and disclaimer.
+- Allows users to select an option from a dropdown list.
+- Supports redirection based on selected option.
+- Provides customizable popup title, text, list of options and disclaimer text.
 - Supports translation using Polylang
+- Enable/Disable per language
 
 ## Installation
 
@@ -17,18 +18,18 @@ The Country Popup Plugin is a WordPress plugin that displays a popup on the home
 
 ## Configuration
 
-1. Go to the WordPress dashboard and navigate to 'Country Popup' settings.
-2. Configure the title, text, list of countries, and redirection URLs in the settings panel.
+1. Go to the WordPress dashboard and navigate to 'Disclaimer Multilang Popup' settings.
+2. Configure the title, text, list of options, and redirection URLs in the settings panel.
 
 ## Usage
 
 - The plugin will display a popup on the homepage according to the configured settings.
-- Users can select their country from the dropdown list and click the submit button.
-- Based on the selected country, users will either be granted access or redirected to a custom URL.
+- Users can select an option from the dropdown list and click the submit button.
+- Based on the selected option, users will either be granted access or redirected to a custom URL.
 
 ## Customization
 
-- Modify the plugin settings in the WordPress dashboard to change the popup title, text, country lists, and redirection URLs.
+- Modify the plugin settings in the WordPress dashboard to change the popup title, text, option lists, and redirection URLs.
 - CSS and JavaScript files can be customized in the plugin directory for further design changes.
 
 ## Translation

@@ -1,4 +1,4 @@
-/* Basic styling for the country popup */
+/* Basic styling for the disclaimer multilang popup */
 .popup-container {
     position: fixed;
     top: 0;
@@ -9,7 +9,7 @@
     z-index: 9998;
     
 }
-.country-popup, .disclaimer-popup {
+.disclaimer-multilang-popup, .disclaimer-popup {
     position: absolute;
     top: 50%;
     left: 50%;
